@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function CardHistoria({ caminhoImg, altImg, textHistoria, to }) {
 	return (
-		<div className='w-full flex flex-col items-center justify-center gap-5 mt-4 md:flex-row'>
+		<div className='w-full flex flex-col-reverse items-center justify-center mt-4 md:flex-row gap-7'>
 			<div className='md:w-1/2 w-full'>
 				<img
 					className='w-full h-96 object-cover rounded-lg flex-1'

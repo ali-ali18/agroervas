@@ -2,6 +2,14 @@ import Carrossel from '../../components/carrossel';
 import CardHistoria from '../../components/Historia/cardHistoria';
 import Vantagens from '../../components/Vantagens/Vantagens';
 import { CiDeliveryTruck } from 'react-icons/ci';
+import {
+	BiDonateHeart,
+	BiCheckShield,
+	BiHeart,
+} from 'react-icons/bi';
+import { TbUsers } from 'react-icons/tb';
+import { HiOutlineOfficeBuilding } from 'react-icons/hi';
+import FormularioFaleConosco from '../../components/FaleConosco/FaleConoscoButtons/form';
 
 export default function Inicio() {
 	const imagesCarrosel = [
@@ -22,10 +30,12 @@ export default function Inicio() {
 	];
 	return (
 		<main className='w-full'>
+			{/* carrosel de imgs */}
 			<Carrossel images={imagesCarrosel} />
+
+			{/* nossa historia */}
 			<section className='px-4 md:px-8  lg:px-16'>
-				<div className='max-w-4xl mx-auto mt-2'>
-					<h1 className='text-3xl font-bold text-center'>Nossa história</h1>
+				<div className='max-w-4xl mx-auto mt-2 '>
 					{cardHistoria.map((item) => (
 						<CardHistoria
 							altImg={item.altImg}
@@ -37,26 +47,39 @@ export default function Inicio() {
 					))}
 				</div>
 			</section>
-			<article className='w-full'>
-				<ul className='grid grid-cols-4 gap-4'>
+
+			{/* diferenciais */}
+			<article className='w-full my-8 px-4 md:px-8  lg:px-16'>
+				<ul className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5'>
 					<Vantagens
 						iconVatagem={<CiDeliveryTruck size={50} />}
 						textDeVantagens='Trabalhamos com as melhores transportadoras do mercado de logística'
 					/>
 					<Vantagens
-						iconVatagem={<CiDeliveryTruck size={50} />}
-						textDeVantagens='Trabalhamos com as melhores transportadoras do mercado de logística'
+						iconVatagem={<TbUsers size={50} />}
+						textDeVantagens='Contamos com uma equipe de funcionários totalmente capacitada para atender você'
 					/>
 					<Vantagens
-						iconVatagem={<CiDeliveryTruck size={50} />}
-						textDeVantagens='Trabalhamos com as melhores transportadoras do mercado de logística'
+						iconVatagem={<BiDonateHeart size={50} />}
+						textDeVantagens='Incentivamos os produtores locais, trabalhando de forma justa e honesta'
 					/>
 					<Vantagens
-						iconVatagem={<CiDeliveryTruck size={50} />}
-						textDeVantagens='Trabalhamos com as melhores transportadoras do mercado de logística'
+						iconVatagem={<BiCheckShield size={50} />}
+						textDeVantagens='Preocupados com a saúde e o bem-estar, trabalhamos com produtos 100% naturais'
+					/>
+					<Vantagens
+						iconVatagem={<BiHeart size={50} />}
+						textDeVantagens='Selecionamos produtos sob demanda, garantindo sempre a melhor qualidade para atender às suas necessidades com excelência'
+					/>
+					<Vantagens
+						iconVatagem={<HiOutlineOfficeBuilding size={50} />}
+						textDeVantagens='Oferecemos oportunidades de emprego locais, conectando você a empresas comprometidas com o desenvolvimento da comunidade e o crescimento profissional'
 					/>
 				</ul>
 			</article>
+
+			{/* Fale conosco */}
+			<FormularioFaleConosco/>
 		</main>
 	);
 }
