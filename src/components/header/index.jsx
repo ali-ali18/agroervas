@@ -51,8 +51,14 @@ export default function Cabecalho() {
             z-50
             `}
 			>
-				<div className='flex justify-end py-2 px-2' aria-label='Abrir menu'>
-					<FaTimes onClick={() => setToggle(false)} size={28} />
+				<div className='flex justify-end py-2 px-2'>
+					<FaTimes
+						aria-label='Fechar o menu'
+						tabIndex='0'
+						role='button'
+						onClick={() => setToggle(false)}
+						size={28}
+					/>
 				</div>
 
 				{/* Navegação mobile */}

@@ -13,16 +13,16 @@ import FormularioFaleConosco from '../../components/FaleConosco/FaleConoscoButto
 
 export default function Inicio() {
 	const imagesCarrosel = [
-		'https://plus.unsplash.com/premium_photo-1728510320088-0b89856e726e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // 1920 x 1080
-		'https://images.unsplash.com/photo-1727950183920-654c2feee258?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // 1920 x 1080
-		'https://plus.unsplash.com/premium_photo-1728566648330-7ba0d675f3c6?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // 1920 x 1080
-		'https://images.unsplash.com/photo-1487139975590-b4f1dce9b035?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+		'https://plus.unsplash.com/premium_photo-1728510320088-0b89856e726e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp', // 1920 x 1080
+		'https://images.unsplash.com/photo-1727950183920-654c2feee258?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp', // 1920 x 1080
+		'https://plus.unsplash.com/premium_photo-1728566648330-7ba0d675f3c6?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp', // 1920 x 1080
+		'https://images.unsplash.com/photo-1487139975590-b4f1dce9b035?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp',
 	];
 
 	const cardHistoria = [
 		{
 			caminhoImg:
-				'https://plus.unsplash.com/premium_photo-1688045685821-4958c1e28322?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+				'https://plus.unsplash.com/premium_photo-1688045685821-4958c1e28322?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp',
 			altImg: 'foto lavanda em sua mais bela forma',
 			textoHistoria:
 				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla possimus atque recusandae quia ab velit expedita id! Qui autem beatae consequuntur voluptate pariatur nulla doloremque, sequi quisquam excepturi illum dicta!',
@@ -81,7 +81,7 @@ export default function Inicio() {
 			{/* Fale conosco */}
 			<FormularioFaleConosco/>
 
-			
+
 		</main>
 	);
 }
