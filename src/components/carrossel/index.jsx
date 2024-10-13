@@ -29,6 +29,7 @@ export default function Carrossel({ images }) {
 			))}
 
 			<button
+				aria-label='Imagem anterior'
 				type='button'
 				onClick={() => anteriorImg(images, setIndexImgs)}
 				className='absolute
@@ -44,6 +45,7 @@ export default function Carrossel({ images }) {
 				<IoIosArrowBack />
 			</button>
 			<button
+				aria-label='Proxima imagem'
 				type='button'
 				onClick={() => proximaImg(images, setIndexImgs)}
 				className='absolute 
