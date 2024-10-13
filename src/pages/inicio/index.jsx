@@ -2,11 +2,7 @@ import Carrossel from '../../components/carrossel';
 import CardHistoria from '../../components/Historia/cardHistoria';
 import Vantagens from '../../components/Vantagens/Vantagens';
 import { CiDeliveryTruck } from 'react-icons/ci';
-import {
-	BiDonateHeart,
-	BiCheckShield,
-	BiHeart,
-} from 'react-icons/bi';
+import { BiDonateHeart, BiCheckShield, BiHeart } from 'react-icons/bi';
 import { TbUsers } from 'react-icons/tb';
 import { HiOutlineOfficeBuilding } from 'react-icons/hi';
 import FormularioFaleConosco from '../../components/FaleConosco/FaleConoscoButtons/form';
@@ -28,6 +24,17 @@ export default function Inicio() {
 				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla possimus atque recusandae quia ab velit expedita id! Qui autem beatae consequuntur voluptate pariatur nulla doloremque, sequi quisquam excepturi illum dicta!',
 		},
 	];
+
+	const cardContado = [
+		{
+			caminhoImg:
+				'https://images.unsplash.com/photo-1631037958943-f6c220c4703a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp',
+			altImg: 'foto de camomilas',
+			textContado:
+				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla possimus atque recusandae quia ab velit expedita id! Qui autem beatae consequuntur voluptate pariatur nulla doloremque, sequi quisquam excepturi illum dicta!',
+		},
+	];
+
 	return (
 		<main className='w-full'>
 			{/* carrosel de imgs */}
@@ -42,6 +49,7 @@ export default function Inicio() {
 							caminhoImg={item.caminhoImg}
 							key={item.altImg}
 							textHistoria={item.textoHistoria}
+							titulo='História'
 							to='historia'
 						/>
 					))}
@@ -79,9 +87,22 @@ export default function Inicio() {
 			</article>
 
 			{/* Fale conosco */}
-			<FormularioFaleConosco/>
+			<FormularioFaleConosco />
 
-
+			<section className='px-4 md:px-8  lg:px-16'>
+				<div className='max-w-4xl mx-auto mt-2 '>
+					{cardContado.map((item) => (
+						<CardHistoria
+							altImg={item.altImg}
+							caminhoImg={item.caminhoImg}
+							key={item.altImg}
+							textHistoria={item.textContado}
+							titulo='Contato'
+							to='contato'
+						/>
+					))}
+				</div>
+			</section>
 		</main>
 	);
 }
