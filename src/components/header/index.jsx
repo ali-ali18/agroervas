@@ -28,7 +28,7 @@ export default function Cabecalho() {
 			</nav>
 
 			{/* Botão toggle mobile */}
-			<button className='sm:hidden' onClick={buttonToggle} type='button'>
+			<button className='sm:hidden' onClick={buttonToggle} type='button' aria-label='Botão abrir o menu'>
 				<IoMenu size={40} />
 			</button>
 
