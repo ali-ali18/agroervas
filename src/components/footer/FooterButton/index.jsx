@@ -5,9 +5,9 @@ export default function ButtonFooter({ children, to }) {
     <li>
       <Link
         to={to}
-        className='block w-full text-gray-400 hover:text-white transition-colors duration-300 py-2'
+        className='block w-full text-white hover:text-gray-400 transition-colors duration-300 py-2'
       >
-        {children}
+        {children}  
       </Link>
     </li>
   );
