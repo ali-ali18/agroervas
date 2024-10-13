@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Inicio from "../pages/inicio";
 import Cabecalho from "../components/header";
+import Footer from "../components/footer";
 
 export default function Rotas () {
     return (
@@ -9,6 +10,7 @@ export default function Rotas () {
             <Routes>
                 <Route path="/" element={<Inicio/>}/>
             </Routes>
+            <Footer/>
         </BrowserRouter>
     )
 }
