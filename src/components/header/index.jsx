@@ -69,7 +69,7 @@ export default function Cabecalho() {
 					<LinkMoba to='/contato' onclick={() => setToggle(false)}>
 						Contato
 					</LinkMoba>
-					<LinkMoba to='/nossa-historia' onclick={() => setToggle(false)}>
+					<LinkMoba to='/historia' onclick={() => setToggle(false)}>
 						Nossa história
 					</LinkMoba>
 					<LinkMoba to='/cliente' onclick={() => setToggle(false)}>
