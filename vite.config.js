@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 import sitemap from 'vite-plugin-sitemap';
 
 // https://vitejs.dev/config/
@@ -8,7 +8,7 @@ export default defineConfig({
 		react(),
 		sitemap({
 			hostname: 'https://www.agroervas.vercel.app',
-			routes: ['/', '/contato', '/nossa-historia', '/produtos', '/cliente'],
+			routes: ['/', '/contato', '/nossa-historia', '/produtos', '/cliente, /pagamento, /informacoes'],
 		}),
 	],
 });

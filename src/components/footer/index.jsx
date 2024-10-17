@@ -10,6 +10,7 @@ export default function Footer() {
           <ButtonFooter to='/'>Início</ButtonFooter>
           <ButtonFooter to='/contato'>Contato</ButtonFooter>
           <ButtonFooter to='/historia'>História</ButtonFooter>
+          <ButtonFooter to='/pagamento'>Formas de Pagamento</ButtonFooter>
         </ul>
       </div>
 
