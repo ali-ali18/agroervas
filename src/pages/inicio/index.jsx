@@ -6,14 +6,16 @@ import { BiDonateHeart, BiCheckShield, BiHeart } from 'react-icons/bi';
 import { TbUsers } from 'react-icons/tb';
 import { HiOutlineOfficeBuilding } from 'react-icons/hi';
 import FormularioFaleConosco from '../../components/FaleConosco/FaleConoscoButtons/form';
+import { Helmet } from 'react-helmet-async';
 
 export default function Inicio() {
-	const imagesCarrosel = [
-		'https://plus.unsplash.com/premium_photo-1728510320088-0b89856e726e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp', // 1920 x 1080
-		'https://images.unsplash.com/photo-1727950183920-654c2feee258?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp', // 1920 x 1080
-		'https://plus.unsplash.com/premium_photo-1728566648330-7ba0d675f3c6?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp', // 1920 x 1080
-		'https://images.unsplash.com/photo-1487139975590-b4f1dce9b035?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp',
-	];
+const imagesCarrosel = [
+  'https://plus.unsplash.com/premium_photo-1728510320088-0b89856e726e?w=800&h=600&q=90&fm=webp&fit=crop',
+  'https://images.unsplash.com/photo-1727950183920-654c2feee258?w=800&h=600&q=90&fm=webp&fit=crop',
+  'https://plus.unsplash.com/premium_photo-1728566648330-7ba0d675f3c6?w=800&h=600&q=90&fm=webp&fit=crop',
+  'https://images.unsplash.com/photo-1487139975590-b4f1dce9b035?w=800&h=600&q=90&fm=webp&fit=crop',
+];
+
 
 	const cardHistoria = [
 		{
@@ -21,7 +23,7 @@ export default function Inicio() {
 				'https://images.unsplash.com/photo-1477511801984-4ad318ed9846?w=800&h=600&q=80&fm=webp',
 			altImg: 'foto lavanda em sua mais bela forma',
 			textoHistoria:
-				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla possimus atque recusandae quia ab velit expedita id! Qui autem beatae consequuntur voluptate pariatur nulla doloremque, sequi quisquam excepturi illum dicta!',
+				'A Agroervas começou sua jornada em 2024, movida pelo sonho de oferecer produtos naturais de alta qualidade para todos. Mesmo em pouco tempo de atuação, nos tornamos uma das empresas que mais cresce no setor, oferecendo mais de 1000 produtos em estoque que atendem às necessidades de saúde e bem-estar dos nossos clientes.',
 		},
 	];
 
@@ -31,12 +33,20 @@ export default function Inicio() {
 				'https://images.unsplash.com/photo-1631037958943-f6c220c4703a?w=800&h=600&q=80&fm=webp',
 			altImg: 'foto de camomilas',
 			textContado:
-				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla possimus atque recusandae quia ab velit expedita id! Qui autem beatae consequuntur voluptate pariatur nulla doloremque, sequi quisquam excepturi illum dicta!',
+				'Tem alguma dúvida ou precisa de mais informações? Na Agroervas, estamos prontos para ajudar você. Entre em contato conosco por telefone, WhatsApp ou e-mail, e nossa equipe ficará feliz em atender suas necessidades. Queremos proporcionar o melhor atendimento para garantir que você tenha a melhor experiência com nossos produtos',
 		},
 	];
 
 	return (
-		<main className='w-full'>
+		<main className='w-full mb-6'>
+			<Helmet>
+				<title>Agroervas | Inicio</title>
+				<meta
+					name='description'
+					content='Agroervas - Encontre produtos naturais e ervas medicinais de alta qualidade. Mais de 1000 produtos à sua disposição para promover saúde e bem-estar de forma natural. Descubra nossa linha completa e cuide de você com o melhor da natureza.'
+				/>
+			</Helmet>
+
 			{/* carrosel de imgs */}
 			<Carrossel images={imagesCarrosel} />
 

@@ -7,6 +7,9 @@ import LayoutFuncionarios from '../layouts/layoutFuncionarios';
 import ClienteDados from '../pages/Dados/ClientDados';
 import Contato from '../pages/Contatos';
 import Historia from '../pages/Historia';
+import PageDireitoAutoral from '../pages/DireitosAutorais';
+import Informacoes from '../pages/Informacoes';
+import FormasPagamento from '../pages/Pagamentos';
 
 export default function Rotas() {
 	return (
@@ -35,6 +38,30 @@ export default function Rotas() {
 					element={
 						<LayoutPadrao>
 							<Contato />
+						</LayoutPadrao>
+					}
+				/>
+				<Route
+					path='/imagens'
+					element={
+						<LayoutPadrao>
+							<PageDireitoAutoral />
+						</LayoutPadrao>
+					}
+				/>
+				<Route
+					path='/informacoes'
+					element={
+						<LayoutPadrao>
+							<Informacoes />
+						</LayoutPadrao>
+					}
+				/>
+				<Route
+					path='/pagamento'
+					element={
+						<LayoutPadrao>
+							<FormasPagamento />
 						</LayoutPadrao>
 					}
 				/>

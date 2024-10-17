@@ -1,9 +1,18 @@
+import { Helmet } from 'react-helmet-async';
 import SecaoImagemTexto from './componentes/SecaoImagemTexto';
 import TituloHistoria from './componentes/TituloHistoria';
 
 export default function Historia() {
+
+
 	return (
 		<section className='flex flex-col items-center px-4 md:px-8 lg:px-16 py-12 bg-gray-50'>
+
+            <Helmet>
+                <title>Agroervas | Nossa História</title>
+                <meta name="description" content="Descubra a história da Agroervas, uma das empresas que mais cresce no setor de produtos naturais e fitoterápicos." />
+            </Helmet>
+
 			{/* Título da Página */}
 			<TituloHistoria texto='Nossa História' />
 

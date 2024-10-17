@@ -2,7 +2,7 @@ import ButtonFooter from './FooterButton';
 
 export default function Footer() {
   return (
-    <footer className='grid grid-cols-1 md:grid-cols-3 gap-8 bg-gray-800 text-white py-8 mt-5 px-4'>
+    <footer className='grid grid-cols-1 md:grid-cols-3 gap-8 bg-gray-800 text-white py-8 px-4'>
       {/* Seção Navegação */}
       <div>
         <h2 className='text-lg font-semibold border-b-2 border-green-500 pb-2'>Navegação</h2>
@@ -10,7 +10,6 @@ export default function Footer() {
           <ButtonFooter to='/'>Início</ButtonFooter>
           <ButtonFooter to='/contato'>Contato</ButtonFooter>
           <ButtonFooter to='/historia'>História</ButtonFooter>
-          <ButtonFooter to='/seja-nosso-cliente'>Seja nosso cliente</ButtonFooter>
         </ul>
       </div>
 

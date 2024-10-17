@@ -1,12 +1,13 @@
 import { ToastContainer } from 'react-toastify';
 import Rotas from './routes';
 import 'react-toastify/dist/ReactToastify.css'; 
+import { HelmetProvider } from 'react-helmet-async';
 function App() {
 	return (
-		<div>
+		<HelmetProvider>
 			<ToastContainer autoClose={3000} />
 			<Rotas />
-		</div>
+		</HelmetProvider>
 	);
 }
 

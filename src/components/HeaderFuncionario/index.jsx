@@ -15,7 +15,11 @@ export default function HeaderFuncionarios() {
 		<header className='flex items-center justify-between p-4 h-24 shadow-md z-50'>
 			{/* Logo */}
 			<Link className='text-4xl font-bold' to='/'>
-				Logo
+				<img
+					src='../imgs/logo.png'
+					alt='logo agroervas'
+					className='w-20 h-auto'
+				/>
 			</Link>
 
 			{/* Navegação do desktop */}

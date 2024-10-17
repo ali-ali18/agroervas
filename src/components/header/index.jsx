@@ -16,7 +16,11 @@ export default function Cabecalho() {
 		<header className='flex items-center justify-between p-4 h-24 shadow-md z-50'>
 			{/* Logo */}
 			<Link className='text-4xl font-bold' to='/'>
-				Logo
+				<img
+					src='../imgs/logo.png'
+					alt='logo agroervas'
+					className='w-20 h-auto'
+				/>
 			</Link>
 
 			{/* Navegação do desktop */}
@@ -24,11 +28,16 @@ export default function Cabecalho() {
 				<LinksDesktop to='/'>Inicio</LinksDesktop>
 				<LinksDesktop to='/contato'>Contato</LinksDesktop>
 				<LinksDesktop to='/historia'>Nossa história</LinksDesktop>
-				<LinksDesktop to='/cliente'>Seja nosso cliente</LinksDesktop>
+				<LinksDesktop to='/pagamento'>Formas de pagamento</LinksDesktop>
 			</nav>
 
 			{/* Botão toggle mobile */}
-			<button className='sm:hidden' onClick={buttonToggle} type='button' aria-label='Botão abrir o menu'>
+			<button
+				className='sm:hidden'
+				onClick={buttonToggle}
+				type='button'
+				aria-label='Botão abrir o menu'
+			>
 				<IoMenu size={40} />
 			</button>
 
@@ -72,8 +81,8 @@ export default function Cabecalho() {
 					<LinkMoba to='/historia' onclick={() => setToggle(false)}>
 						Nossa história
 					</LinkMoba>
-					<LinkMoba to='/cliente' onclick={() => setToggle(false)}>
-						Seja nosso cliente
+					<LinkMoba to='/pagamento' onclick={() => setToggle(false)}>
+						Formas de pagamento
 					</LinkMoba>
 				</nav>
 			</div>
