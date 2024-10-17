@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap para ajudar os motores de busca a rastrear seu site
+Sitemap: https://www.agroervas.com.br/sitemap.xml

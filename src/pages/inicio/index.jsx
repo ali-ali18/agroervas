@@ -18,7 +18,7 @@ export default function Inicio() {
 	const cardHistoria = [
 		{
 			caminhoImg:
-				'https://plus.unsplash.com/premium_photo-1688045685821-4958c1e28322?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp',
+				'https://images.unsplash.com/photo-1477511801984-4ad318ed9846?w=800&h=600&q=80&fm=webp',
 			altImg: 'foto lavanda em sua mais bela forma',
 			textoHistoria:
 				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla possimus atque recusandae quia ab velit expedita id! Qui autem beatae consequuntur voluptate pariatur nulla doloremque, sequi quisquam excepturi illum dicta!',
@@ -28,7 +28,7 @@ export default function Inicio() {
 	const cardContado = [
 		{
 			caminhoImg:
-				'https://images.unsplash.com/photo-1631037958943-f6c220c4703a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp',
+				'https://images.unsplash.com/photo-1631037958943-f6c220c4703a?w=800&h=600&q=80&fm=webp',
 			altImg: 'foto de camomilas',
 			textContado:
 				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla possimus atque recusandae quia ab velit expedita id! Qui autem beatae consequuntur voluptate pariatur nulla doloremque, sequi quisquam excepturi illum dicta!',
