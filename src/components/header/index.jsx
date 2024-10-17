@@ -23,7 +23,7 @@ export default function Cabecalho() {
 			<nav className='hidden sm:flex gap-3 items-center justify-center'>
 				<LinksDesktop to='/'>Inicio</LinksDesktop>
 				<LinksDesktop to='/contato'>Contato</LinksDesktop>
-				<LinksDesktop to='/nossa-historia'>Nossa história</LinksDesktop>
+				<LinksDesktop to='/historia'>Nossa história</LinksDesktop>
 				<LinksDesktop to='/cliente'>Seja nosso cliente</LinksDesktop>
 			</nav>
 
