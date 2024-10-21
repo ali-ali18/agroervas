@@ -24,16 +24,17 @@ export default function Cabecalho() {
 			</Link>
 
 			{/* Navegação do desktop */}
-			<nav className='hidden sm:flex gap-3 items-center justify-center'>
+			<nav className='hidden lg:flex gap-3 items-center justify-center'>
 				<LinksDesktop to='/'>Inicio</LinksDesktop>
 				<LinksDesktop to='/contato'>Contato</LinksDesktop>
 				<LinksDesktop to='/historia'>Nossa história</LinksDesktop>
 				<LinksDesktop to='/pagamento'>Formas de pagamento</LinksDesktop>
+				<LinksDesktop to='/entrega'>Formas de entrega</LinksDesktop>
 			</nav>
 
 			{/* Botão toggle mobile */}
 			<button
-				className='sm:hidden'
+				className='lg:hidden'
 				onClick={buttonToggle}
 				type='button'
 				aria-label='Botão abrir o menu'
@@ -83,6 +84,9 @@ export default function Cabecalho() {
 					</LinkMoba>
 					<LinkMoba to='/pagamento' onclick={() => setToggle(false)}>
 						Formas de pagamento
+					</LinkMoba>
+					<LinkMoba to='/entrega' onclick={() => setToggle(false)}>
+						Formas de entrega
 					</LinkMoba>
 				</nav>
 			</div>

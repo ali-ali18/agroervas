@@ -14,8 +14,7 @@ export default function Dados() {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-
-        verificaAutenticacao(userLoading,user,navigate)
+		verificaAutenticacao(userLoading, user, navigate);
 
 		const buscaContatos = async () => {
 			try {
@@ -34,7 +33,8 @@ export default function Dados() {
 		buscaContatos();
 	}, [user, userLoading, navigate]);
 
-	if (loading) return <p>Carregando...</p>;
+	if (loading)
+		return <p className='text-center text-2xl mt-10'>Carregando...</p>;
 
 	return (
 		<main className='flex flex-col items-center min-h-screen bg-gray-50 py-10'>
@@ -62,7 +62,9 @@ export default function Dados() {
 								</div>
 								<div className='flex items-center gap-4'>
 									<MdEmail size={25} className='text-gray-700' />
-									<p className='text-lg text-gray-700'>{contato.email}</p>
+									<p className='text-lg text-gray-700 break-all'>
+										{contato.email}
+									</p>
 								</div>
 							</Link>
 						))}

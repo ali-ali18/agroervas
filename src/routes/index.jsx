@@ -10,6 +10,9 @@ import Historia from '../pages/Historia';
 import PageDireitoAutoral from '../pages/DireitosAutorais';
 import Informacoes from '../pages/Informacoes';
 import FormasPagamento from '../pages/Pagamentos';
+import Entrega from '../pages/Entrega/Index';
+import Funcionarios from '../pages/Funcionarios';
+import Faltas from '../pages/Faltas';
 
 export default function Rotas() {
 	return (
@@ -66,6 +69,14 @@ export default function Rotas() {
 					}
 				/>
 
+				<Route
+					path='/entrega'
+					element={
+						<LayoutPadrao>
+							<Entrega />
+						</LayoutPadrao>
+					}
+				/>
 				{/* ÁREA FUNCIONARIOS */}
 				<Route
 					path='/login-agroervas'
@@ -91,7 +102,26 @@ export default function Rotas() {
 						</LayoutFuncionarios>
 					}
 				/>
+				<Route
+					path='/funcionarios'
+					element={
+						<LayoutFuncionarios>
+							<Funcionarios />
+						</LayoutFuncionarios>
+					}
+				/>
+				<Route
+					path='/faltas'
+					element={
+						<LayoutFuncionarios>
+							<Faltas />
+						</LayoutFuncionarios>
+					}
+				/>
 			</Routes>
+
+			{/* Route de rotas 404 */}
+			
 		</BrowserRouter>
 	);
 }

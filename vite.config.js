@@ -8,7 +8,7 @@ export default defineConfig({
 		react(),
 		sitemap({
 			hostname: 'https://www.agroervas.vercel.app',
-			routes: ['/', '/contato', '/nossa-historia', '/produtos', '/cliente, /pagamento, /informacoes'],
+			routes: ['/', '/contato', '/historia', '/produtos', '/cliente, /pagamento, /informacoes', '/entrega'],
 		}),
 	],
 });

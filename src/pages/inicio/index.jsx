@@ -9,13 +9,16 @@ import FormularioFaleConosco from '../../components/FaleConosco/FaleConoscoButto
 import { Helmet } from 'react-helmet-async';
 
 export default function Inicio() {
-const imagesCarrosel = [
-  'https://plus.unsplash.com/premium_photo-1728510320088-0b89856e726e?w=800&h=600&q=90&fm=webp&fit=crop',
-  'https://images.unsplash.com/photo-1727950183920-654c2feee258?w=800&h=600&q=90&fm=webp&fit=crop',
-  'https://plus.unsplash.com/premium_photo-1728566648330-7ba0d675f3c6?w=800&h=600&q=90&fm=webp&fit=crop',
-  'https://images.unsplash.com/photo-1487139975590-b4f1dce9b035?w=800&h=600&q=90&fm=webp&fit=crop',
-];
+	const imagesMobile = [
+		'./imgs/2.svg',
+		'https://images.unsplash.com/photo-1554345795-1243a276630e?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp',
+		'https://images.unsplash.com/photo-1465471315544-f11525b8974c?q=80&w=1910&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+	];
 
+	const imagesDesktop = [
+		'./imgs/2.svg',
+		'https://images.unsplash.com/photo-1553267574-277716d448fb?q=80&w=1778&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+	];
 
 	const cardHistoria = [
 		{
@@ -48,7 +51,7 @@ const imagesCarrosel = [
 			</Helmet>
 
 			{/* carrosel de imgs */}
-			<Carrossel images={imagesCarrosel} />
+			<Carrossel imagesMobile={imagesMobile} imagesDesktop={imagesDesktop} />
 
 			{/* nossa historia */}
 			<section className='px-4 md:px-8  lg:px-16'>

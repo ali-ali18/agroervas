@@ -2,18 +2,30 @@ import { useEffect, useState } from 'react';
 import { anteriorImg, proximaImg } from './functions/carroselItens';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
-export default function Carrossel({ images }) {
+export default function Carrossel({ imagesMobile, imagesDesktop }) {
 	const [indexImgs, setIndexImgs] = useState(0);
+	const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Define se é mobile ou não
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth < 768);
+		};
+		window.addEventListener('resize', handleResize);
+
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
+	const images = isMobile ? imagesMobile : imagesDesktop;
 
 	useEffect(() => {
 		const intervalo = setInterval(() => {
 			proximaImg(images, setIndexImgs);
 		}, 8000);
 		return () => clearInterval(intervalo);
-	}, []);
+	}, [images]);
 
 	return (
-		<div className='relative w-full h-96 overflow-hidden'>
+		<div className='relative w-full h-[450px] overflow-hidden'>
 			{images.map((image, index) => (
 				<div
 					key={index}
@@ -24,6 +36,8 @@ export default function Carrossel({ images }) {
 						backgroundImage: `url(${image})`,
 						backgroundSize: 'cover',
 						backgroundPosition: 'center',
+						width: '100%',
+						height: '100%',
 					}}
 				/>
 			))}
@@ -32,32 +46,15 @@ export default function Carrossel({ images }) {
 				aria-label='Imagem anterior'
 				type='button'
 				onClick={() => anteriorImg(images, setIndexImgs)}
-				className='absolute
-                text-4xl
-                rounded-full
-                left-3 
-                top-1/2 transform 
-                -translate-y-1/2 
-                bg-black 
-                bg-opacity-50 
-                text-white p-2'
+				className='absolute text-4xl rounded-full left-3 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2'
 			>
 				<IoIosArrowBack />
 			</button>
 			<button
-				aria-label='Proxima imagem'
+				aria-label='Próxima imagem'
 				type='button'
 				onClick={() => proximaImg(images, setIndexImgs)}
-				className='absolute 
-                text-4xl 
-                rounded-full 
-                right-3 
-                top-1/2 
-                transform 
-                -translate-y-1/2 
-                bg-black 
-                bg-opacity-50 
-                text-white p-2'
+				className='absolute text-4xl rounded-full right-3 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2'
 			>
 				<IoIosArrowForward />
 			</button>

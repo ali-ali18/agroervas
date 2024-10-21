@@ -1,6 +1,6 @@
+import { Helmet } from 'react-helmet-async';
 import { MdEmail, MdPhone, MdWhatsapp } from 'react-icons/md'; // Importando ícones para os métodos de contato
 import FormularioFaleConosco from '../../components/FaleConosco/FaleConoscoButtons/form';
-import { Helmet } from 'react-helmet-async';
 
 export default function Contato() {
 	return (
@@ -27,19 +27,19 @@ export default function Contato() {
 				<div className='flex items-center justify-center mb-3'>
 					<MdWhatsapp size={30} className='text-green-600 mr-2' />
 					<a
-						href='https://wa.me/5511988888888'
+						href='https://wa.me/554191244175'
 						target='_blank'
 						rel='noopener noreferrer'
 						className='text-lg text-gray-600 hover:text-green-800 transition-colors'
 					>
-						WhatsApp: (11) 98888-8888
+						WhatsApp: (41) 9124-4175
 					</a>
 				</div>
 
 				{/* Telefone */}
 				<div className='flex items-center justify-center mb-3'>
 					<MdPhone size={30} className='text-blue-600 mr-2' />
-					<p className='text-lg text-gray-600'>Telefone: (11) 9999-9999</p>
+					<p className='text-lg text-gray-600'>Telefone: 3075-1759</p>
 				</div>
 
 				{/* Email */}
@@ -49,7 +49,7 @@ export default function Contato() {
 						href='mailto:contato@agroervas.com'
 						className='text-lg text-gray-600 hover:text-red-800 transition-colors'
 					>
-						Email: contato@agroervas.com
+						Email: dacsan@agroervas.com.br
 					</a>
 				</div>
 			</div>
