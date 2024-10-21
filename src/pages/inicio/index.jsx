@@ -10,9 +10,9 @@ import { Helmet } from 'react-helmet-async';
 
 export default function Inicio() {
 	const images = [
-		'https://images.unsplash.com/photo-1554345795-1243a276630e?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp',
-		'https://images.unsplash.com/photo-1465471315544-f11525b8974c?q=80&w=1910&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-		'https://images.unsplash.com/photo-1553267574-277716d448fb?q=80&w=1778&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+		'https://images.unsplash.com/photo-1554345795-1243a276630e?q=80&w=800&h=600&fit=crop&auto=format&ixlib=rb-4.0.3.webp',
+		'https://images.unsplash.com/photo-1465471315544-f11525b8974c?q=80&w=800&h=600&fit=crop&auto=format&ixlib=rb-4.0.3.webp',
+		'https://images.unsplash.com/photo-1553267574-277716d448fb?q=80&w=800&h=600&fit=crop&auto=format&ixlib=rb-4.0.3.webp',
 	];
 
 	const cardHistoria = [
