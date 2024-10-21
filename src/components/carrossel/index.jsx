@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { anteriorImg, proximaImg } from './functions/carroselItens';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 export default function Carrossel({ images }) {
 	const [indexImgs, setIndexImgs] = useState(0);
+	const containerRef = useRef();
 
 	useEffect(() => {
 		const intervalo = setInterval(() => {
@@ -12,16 +13,35 @@ export default function Carrossel({ images }) {
 		return () => clearInterval(intervalo);
 	}, []);
 
+	useEffect(() => {
+		const container = containerRef.current;
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.style.backgroundImage = `url(${entry.target.dataset.src})`;
+					}
+				});
+			},
+			{ threshold: 0.5 },
+		);
+
+		const elements = container.querySelectorAll('.lazy-image');
+		elements.forEach((el) => observer.observe(el));
+
+		return () => observer.disconnect();
+	}, []);
+
 	return (
-		<div className='relative w-full h-128 overflow-hidden'>
+		<div ref={containerRef} className='relative w-full h-128 overflow-hidden'>
 			{images.map((image, index) => (
 				<div
 					key={index}
-					className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${
+					data-src={image}
+					className={`lazy-image absolute inset-0 transition-transform duration-1000 ease-in-out ${
 						index === indexImgs ? 'translate-x-0' : 'translate-x-full'
 					}`}
 					style={{
-						backgroundImage: `url(${image})`,
 						backgroundSize: 'cover',
 						backgroundPosition: 'center',
 					}}

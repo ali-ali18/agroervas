@@ -8,6 +8,7 @@ export default function CardHistoria({ caminhoImg, altImg, textHistoria, to, tit
 					className='w-full h-96 object-cover rounded-lg flex-1'
 					src={caminhoImg}
 					alt={altImg}
+					loading='lizy'
 				/>
 			</div>
 			<div className='flex flex-col items-center justify-center text-center md:text-start md:items-start md:w-1/2'>
