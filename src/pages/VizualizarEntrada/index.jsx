@@ -30,7 +30,7 @@ export default function Entradas() {
 		};
 		verificaAutenticacao(userLoading,user,navigate)
 		fetchEntradas();
-	}, []);
+	}, [userLoading,user,navigate]);
 
 	const handleDelete = async (id) => {
 		try {
