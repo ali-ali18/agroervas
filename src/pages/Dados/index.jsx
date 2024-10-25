@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { MdEmail, MdPerson } from 'react-icons/md';
 import verificaAutenticacao from '../../utils/auth';
+import { Helmet } from 'react-helmet-async';
 
 export default function Dados() {
 	const [contatos, setContatos] = useState([]);
@@ -38,6 +39,9 @@ export default function Dados() {
 
 	return (
 		<main className='flex flex-col items-center min-h-screen bg-gray-50 py-10'>
+			<Helmet>
+				<title>Agroervas | Dados Clientes</title>
+			</Helmet>
 			<div className='w-full max-w-6xl p-6'>
 				<h2 className='text-3xl font-bold mb-8 text-center text-gray-800'>
 					Contatos Recebidos

@@ -27,6 +27,8 @@ export default function HeaderFuncionarios() {
 				<LinksDesktop to='/dados'>Contatos</LinksDesktop>
 				<LinksDesktop to='/funcionarios'>Funcionarios</LinksDesktop>
 				<LinksDesktop to='/faltas'>Faltas</LinksDesktop>
+				<LinksDesktop to='/entrada'>Entrada dos produtos</LinksDesktop>
+				<LinksDesktop to='/entradas'>Vizualizar entradas</LinksDesktop>
 			</nav>
 
 			{/* Botão toggle mobile */}
@@ -73,11 +75,17 @@ export default function HeaderFuncionarios() {
 					<LinkMoba to='/dados' onclick={() => setToggle(false)}>
 						Contatos
 					</LinkMoba>
-					<LinkMoba to='/funcionario' onclick={() => setToggle(false)}>
+					<LinkMoba to='/funcionarios' onclick={() => setToggle(false)}>
 						Funcionario
 					</LinkMoba>
 					<LinkMoba to='/faltas' onclick={() => setToggle(false)}>
 						Faltas
+					</LinkMoba>
+					<LinkMoba to='/entrada' onclick={() => setToggle(false)}>
+						Entrada dos produtos
+					</LinkMoba>
+					<LinkMoba to='/entradas' onclick={() => setToggle(false)}>
+						Vizualizar entradas
 					</LinkMoba>
 				</nav>
 			</div>

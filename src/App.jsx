@@ -5,7 +5,7 @@ import { HelmetProvider } from 'react-helmet-async';
 function App() {
 	return (
 		<HelmetProvider>
-			<ToastContainer autoClose={3000} />
+			<ToastContainer autoClose={3000} stacked theme='light' limit={3} draggable={60}/>
 			<Rotas />
 		</HelmetProvider>
 	);

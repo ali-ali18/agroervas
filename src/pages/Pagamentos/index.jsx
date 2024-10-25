@@ -5,7 +5,7 @@ export default function FormasPagamento() {
 	return (
 		<section className='bg-gray-100 text-gray-800 py-12 px-4'>
 			<Helmet>
-				<title>Agroevas | Formas de pagamento</title>
+				<title>Agroervas | Formas de pagamento</title>
 				<meta
 					name='description'
 					content='Confira as formas de pagamento da Agroervas. Pagamento via Pix com 3% de desconto, cartão de crédito e débito, boleto bancário sujeito a análise e dinheiro com 3% de desconto. Facilite suas compras conosco.'

@@ -1,18 +1,22 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Inicio from '../pages/inicio';
 import LoginUser from '../components/login';
 import LayoutPadrao from '../layouts/layoutCabecalho';
-import Dados from '../pages/Dados';
 import LayoutFuncionarios from '../layouts/layoutFuncionarios';
-import ClienteDados from '../pages/Dados/ClientDados';
 import Contato from '../pages/Contatos';
-import Historia from '../pages/Historia';
+import Dados from '../pages/Dados';
+import ClienteDados from '../pages/Dados/ClientDados';
 import PageDireitoAutoral from '../pages/DireitosAutorais';
+import Entrega from '../pages/Entrega/Index';
+import Faltas from '../pages/Faltas';
+import Funcionarios from '../pages/Funcionarios';
+import Historia from '../pages/Historia';
 import Informacoes from '../pages/Informacoes';
 import FormasPagamento from '../pages/Pagamentos';
-import Entrega from '../pages/Entrega/Index';
-import Funcionarios from '../pages/Funcionarios';
-import Faltas from '../pages/Faltas';
+import Inicio from '../pages/inicio';
+import FuncionarioId from '../pages/FuncionarioId';
+import Page404 from '../pages/404';
+import Entrada from '../pages/Entrada';
+import Entradas from '../pages/VizualizarEntrada';
 
 export default function Rotas() {
 	return (
@@ -111,6 +115,14 @@ export default function Rotas() {
 					}
 				/>
 				<Route
+					path='/funcionarios/:id'
+					element={
+						<LayoutFuncionarios>
+							<FuncionarioId />
+						</LayoutFuncionarios>
+					}
+				/>
+				<Route
 					path='/faltas'
 					element={
 						<LayoutFuncionarios>
@@ -118,10 +130,32 @@ export default function Rotas() {
 						</LayoutFuncionarios>
 					}
 				/>
+				<Route
+					path='/entrada'
+					element={
+						<LayoutFuncionarios>
+							<Entrada />
+						</LayoutFuncionarios>
+					}
+				/>
+				<Route
+					path='/entradas'
+					element={
+						<LayoutFuncionarios>
+							<Entradas />
+						</LayoutFuncionarios>
+					}
+				/>
+				{/* Route de rotas 404 */}
+				<Route
+					path='*'
+					element={
+						<LayoutPadrao>
+							<Page404 />
+						</LayoutPadrao>
+					}
+				/>
 			</Routes>
-
-			{/* Route de rotas 404 */}
-			
 		</BrowserRouter>
 	);
 }

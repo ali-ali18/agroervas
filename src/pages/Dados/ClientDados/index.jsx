@@ -6,6 +6,7 @@ import verificaAutenticacao from '../../../utils/auth';
 import { doc, getDoc, deleteDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 import { FaEnvelope, FaWhatsapp, FaTrash } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 
 export default function ClienteDados() {
 	let { id } = useParams();
@@ -68,6 +69,9 @@ export default function ClienteDados() {
 
 	return (
 		<section className='bg-gray-100 text-gray-800 py-12 px-4'>
+			<Helmet>
+				<title>Agroervas | Cliente: {contato.nome}</title>
+			</Helmet>
 			<div className='max-w-4xl mx-auto'>
 				<h2 className='text-3xl font-semibold mb-8 text-center'>
 					Dados do Cliente
