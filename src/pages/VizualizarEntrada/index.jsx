@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react';
-import { db } from '../../api';
+import { auth, db } from '../../api';
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 import { FaTrash } from 'react-icons/fa';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import verificaAutenticacao from '../../utils/auth';
 
 export default function Entradas() {
 	const [entradas, setEntradas] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const [user, userLoading] = useAuthState(auth);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		const fetchEntradas = async () => {
@@ -23,7 +28,7 @@ export default function Entradas() {
 				setLoading(false);
 			}
 		};
-
+		verificaAutenticacao(userLoading,user,navigate)
 		fetchEntradas();
 	}, []);
 
