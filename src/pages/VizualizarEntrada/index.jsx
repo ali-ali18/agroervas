@@ -80,7 +80,7 @@ export default function Entradas() {
 									onClick={() => handleDelete(entrada.id)}
 									className='bg-red-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-red-500 transition-colors flex items-center gap-2'
 								>
-									<FaTrash /> Excluir Entrada
+									<FaTrash /> Excluir Entrada'
 								</button>
 							</div>
 						))}
