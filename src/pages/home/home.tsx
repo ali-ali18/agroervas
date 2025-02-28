@@ -1,22 +1,37 @@
-import { ColourfulText } from "@/components/ColorText/ColorText";
-import { GridBackgroundDemo } from "@/components/GridBackground/GridBackground";
-import { Button } from "@/components/ui/button";
-import { SquareArrowOutUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import AnimatedContainer from "@/components/AnimatedContainer/animatedContainer";
+import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 import { ContainerSpacing } from "../../components/containerSpacing/containerSpacing";
-import { CardStack } from "./components/CardApresentacao";
-import { Apresentacao } from "./components/apresentacao";
-import { Chart } from "./components/chart";
 import { FlipWords } from "./components/flipWord";
 import ContentVantagens from "./utils/ContentVantagens";
-import { items } from "./utils/ItemsCardApresentacao";
-import { LayoutWobbleCards } from "./components/wobbleCards/layout";
-import EfeitoMotion from "./components/efeitoMotion";
-import { Helmet } from "react-helmet";
+import { Button } from "@/components/ui/button";
+import { SquareArrowOutUpRight } from "lucide-react";
+import CardsAnimate from "@/components/CardsAnimate/cardsAnimate";
+import { lazy, Suspense } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Apresentacao } from "./components/apresentacao";
+
+const GridBackgroundDemo = lazy(() =>
+	import("@/components/GridBackground/GridBackground").then((module) => ({
+		default: module.GridBackgroundDemo,
+	})),
+);
+
+const AnimatedBeamMultipleOutputDemo = lazy(() =>
+	import("@/components/LigacaoImpresas/ligacaoEmpresas").then((module) => ({
+		default: module.AnimatedBeamMultipleOutputDemo,
+	})),
+);
+
+const LayoutWobbleCards = lazy(() =>
+	import("./components/wobbleCards/layout").then((module) => ({
+		default: module.LayoutWobbleCards,
+	})),
+);
 
 export default function Home() {
 	return (
-		<div>
+		<div className="overflow-hidden">
 			<Helmet>
 				<title>
 					Agroervas | Cresça seu negócio com produtos sob demanda de alta
@@ -40,7 +55,7 @@ export default function Home() {
 				<meta
 					property="og:title"
 					content="Agroervas | Cresça seu negócio com produtos sob demanda de alta
-					qualidade"
+qualidade"
 				/>
 				<meta
 					property="og:description"
@@ -53,68 +68,80 @@ export default function Home() {
 
 			{/* Inicio da apresentação */}
 			<ContainerSpacing>
-				<EfeitoMotion initial={{ opacity: 0, x: 100 }} duration={1.2}>
-					<div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:py-10 ">
-						<Apresentacao />
-						<CardStack items={items} />
-					</div>
-				</EfeitoMotion>
-			</ContainerSpacing>
-
-			{/* Vantagens chamativa */}
-			<div className="py-8 md:py-10">
-				<GridBackgroundDemo height="35rem">
-					<h1 className="text-center text-wrap">
-						Transformando <br />{" "}
-						<FlipWords className="" words={ContentVantagens} /> <br />
-						com qualidade e confiança
-					</h1>
-				</GridBackgroundDemo>
-			</div>
-
-			<ContainerSpacing>
-				<div className="flex flex-col xl:flex-row gap-6">
-					<div className="flex flex-col gap-3 md:gap-4 flex-1">
-						<h2 className="font-bold text-3xl text- md:text-4xl">
-							Empresas que confiam no nosso modelo sob demanda continuam
-							<br />
-							<ColourfulText text="crescendo" />
-						</h2>
-						<p className="text-muted-foreground">
-							Nos últimos meses, mais negócios têm apostado na qualidade
-							garantida de um processo feito sob demanda. Produzimos e
-							classificamos cada pedido após a sua confirmação, garantindo
-							produtos sempre frescos e prontos para o mercado. Junte-se a quem
-							já está crescendo com a gente!
-						</p>
-						<div className="flex flex-col lg:flex-row gap-2 md:gap-4">
-							<Button
-								asChild
-								className="rounded-lg font-bold"
-								variant={"outline"}
-								size={"lg"}
-							>
-								<a href="https://wa.me/554191244175">
-									Conversar com um especialista <SquareArrowOutUpRight />
-								</a>
-							</Button>
-							<Button
-								asChild
-								className="rounded-lg font-bold"
-								variant={"ghost"}
-								size={"lg"}
-							>
-								<Link to="/history">Nossa história</Link>
-							</Button>
-						</div>
-					</div>
-					<div className="flex flex-1 max-w-full px-0 lg:px-12 xl:px-0">
-						<Chart />
-					</div>
+				<div className="flex flex-col items-center justify-center gap-4 sm:py-10 ">
+					<Apresentacao />
 				</div>
 			</ContainerSpacing>
-			<div className="py-10 w-full">
-				<LayoutWobbleCards />
+
+			<CardsAnimate />
+
+			{/* Vantagens chamativa */}
+			<motion.div
+				whileInView="visible"
+				viewport={{ once: true, amount: 0.6 }}
+				initial="hidden"
+				className="py-8 md:py-10"
+			>
+				<Suspense
+					fallback={
+						<div className="flex items-center justify-center">
+							<Skeleton className="h-[400px] w-full" />
+						</div>
+					}
+				>
+					<GridBackgroundDemo height="35rem">
+						<h1 className="text-center text-wrap">
+							Transformando <br />{" "}
+							<FlipWords className="" words={ContentVantagens} /> <br />
+							com qualidade e confiança
+						</h1>
+					</GridBackgroundDemo>
+				</Suspense>
+			</motion.div>
+			{/* Gráfico */}
+			<AnimatedContainer />
+
+			<motion.div
+				className="overflow-hidden"
+				initial={{ opacity: 0, x: 100 }}
+				viewport={{ once: true, amount: 0.6 }}
+				whileInView={{ opacity: 1, x: 0, scale: 1 }}
+				transition={{ duration: 1.2, delay: 0.2 }}
+			>
+				<ContainerSpacing>
+					<div className="">
+						<h1 className="text-2xl md:text-4xl font-bold">
+							Soluções completas para o seu negócio
+						</h1>
+						<p className="text-muted-foreground my-4">
+							Na Agroervas, oferecemos ervas e especiarias de alta qualidade,
+							diretamente do produtor para o seu negócio. Com preços
+							competitivos, entrega ágil e um portfólio diversificado, somos o
+							parceiro ideal para atender às demandas do mercado B2B. Conte
+							conosco para impulsionar seus resultados com produtos premium e um
+							serviço personalizado.
+						</p>
+					</div>
+					<Button asChild size={"lg"} variant={"outline"}>
+						<a
+							href="https://wa.me/554191244175"
+							className="flex items-center gap-2 font-bold"
+							rel="noopener noreferrer"
+							target="__blank"
+						>
+							Conversar com um especilista <SquareArrowOutUpRight />
+						</a>
+					</Button>
+				</ContainerSpacing>
+				<Suspense fallback={<Skeleton className="h-[400px] w-full" />}>
+					<AnimatedBeamMultipleOutputDemo />
+				</Suspense>
+			</motion.div>
+
+			<div className="py-1 w-full">
+				<Suspense fallback={<Skeleton className="h-[400px] w-full" />}>
+					<LayoutWobbleCards />
+				</Suspense>
 			</div>
 		</div>
 	);

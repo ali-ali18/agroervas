@@ -17,30 +17,34 @@ import {
 	CartesianGrid,
 	ResponsiveContainer,
 	XAxis,
-    YAxis,
+	YAxis,
 } from "recharts";
 import { chartConfig, chartData } from "../utils/ContentTabela";
-
-
 
 export function Chart() {
 	const { theme } = useTheme();
 
-
-
-    const aumentoClientes = ((chartData[chartData.length - 1].Clientes - chartData[0].Clientes) / chartData[0].Clientes) * 100
-
+	const aumentoClientes =
+		((chartData[chartData.length - 1].Clientes - chartData[0].Clientes) /
+			chartData[0].Clientes) *
+		100;
 
 	return (
 		<Card className="w-full max-w-full">
 			<CardHeader>
-				<CardTitle className="text-2xl font-bold">Clientes atendidos em determinado período</CardTitle>
-                <CardDescription>
-                    <div>
-                        <span className="text-2xl font-bold text-black dark:text-white">{aumentoClientes.toFixed(2)}%</span>
-                        <p className="text-sm text-muted-foreground">Aumento de clientes em relação ao período anterior</p>
-                    </div>
-                </CardDescription>
+				<CardTitle className="text-2xl font-bold">
+					Clientes atendidos em determinado período
+				</CardTitle>
+				<CardDescription>
+					<div>
+						<span className="text-2xl font-bold text-black dark:text-white">
+							{aumentoClientes.toFixed(2)}%
+						</span>
+						<p className="text-sm text-muted-foreground">
+							Aumento de satisfação dos clientes em relação ao período anterior
+						</p>
+					</div>
+				</CardDescription>
 			</CardHeader>
 
 			<CardContent>
@@ -58,13 +62,12 @@ export function Chart() {
 								axisLine={false}
 								tickFormatter={(value) => value.slice(0, 3)}
 							/>
-                            <YAxis
-                                tickLine={false}
-                                axisLine={false}
-                                tickFormatter={(value) => value.toLocaleString()}
-                            />
+							<YAxis
+								tickLine={false}
+								axisLine={false}
+								tickFormatter={(value) => value.toLocaleString()}
+							/>
 							<ChartTooltip content={<ChartTooltipContent />} />
-
 
 							<Bar
 								dataKey="Clientes"

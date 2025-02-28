@@ -13,9 +13,9 @@ import { AlertCircle } from "lucide-react";
 
 export default function Delivery() {
 	return (
-        <div className="w-full h-screen">
+        <div className="w-full min-h-screen flex items-center justify-center">
 		<ContainerSpacing>
-			<div className="w-full flex justify-center">
+			<div className="w-full flex justify-center items-center">
 				<Card>
 					<CardHeader>
 						<CardTitle className="text-xl text-center">Informações de entrega</CardTitle>
@@ -26,7 +26,7 @@ export default function Delivery() {
 					</CardHeader>
 					<CardContent>
 						<div className="w-full flex justify-center mb-10 mt-0">
-							<Alert className="w-1/2">
+							<Alert className="md:w-1/2 w-full">
 								<AlertCircle className="w-5"/>
 								<AlertTitle>
 									As informações de entrega podem variar conforme o destino e a

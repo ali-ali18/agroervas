@@ -3,7 +3,6 @@ import Layout from "./layouts/layouts";
 import Home from "./pages/home/home";
 import About from "./pages/about/about";
 import Contact from "./pages/Contact/contact";
-import History from "./pages/history";
 import Delivery from "./pages/delivery";
 import Payments from "./pages/payments";
 const router = createBrowserRouter([
@@ -22,11 +21,6 @@ const router = createBrowserRouter([
 			{
 				path: "/contact",
 				element: <Contact />,
-			},
-
-			{
-				path: "/history",
-				element: <History />,
 			},
 
 			{

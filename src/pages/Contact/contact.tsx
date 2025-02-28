@@ -9,7 +9,7 @@ export default function Contact() {
 		<GridBackgroundDemo height="90vh">
 			<ContainerSpacing>
 				<div className="flex flex-col gap-4 items-center justify-center text-center">
-					<h1 className="">
+					<h1 className="text-wrap">
 						Converse com a gente e <br />
 						<ColourfulText text="descubra novas possibilidades" />
 					</h1>
@@ -20,7 +20,7 @@ export default function Contact() {
 						equipe.
 					</p>
 				</div>
-				<div className="flex gap-4 justify-center my-6">
+				<div className="flex gap-4 justify-center my-6 flex-col md:flex-row">
 					<Button variant={"outline"} size={"lg"} asChild>
 						<a
 							href="https://wa.me/554191244175"

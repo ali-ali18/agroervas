@@ -1,5 +1,5 @@
 type GridBackgroundType = 'grid' | 'dot' | 'small-grid';
-interface GridBackgroundProps {
+export interface GridBackgroundProps {
 	children: React.ReactNode;
 	height?: string;
 	gridBg?: GridBackgroundType;

@@ -15,7 +15,7 @@ import { paymentData } from "@/db/duvidas";
 
 export default function Payments() {
 	return (
-		<div className="w-full h-screen">
+		<div className="w-full min-h-screen flex items-center justify-center">
 			<ContainerSpacing>
 				<div className="w-full flex justify-center">
 					<Card>
@@ -30,7 +30,7 @@ export default function Payments() {
 						</CardHeader>
 						<CardContent>
 							<div className="w-full flex justify-center mb-10 mt-0">
-								<Alert className="w-1/2">
+								<Alert className="md:w-1/2 w-full">
 									<AlertCircle className="w-5" />
 									<AlertTitle>
 										Importante: verifique as condições de pagamento antes de
