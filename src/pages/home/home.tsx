@@ -113,7 +113,6 @@ qualidade"
 			<motion.div
 				className="overflow-hidden"
 				initial={{ opacity: 0, x: 100 }}
-				viewport={{ once: true, amount: 0.6 }}
 				whileInView={{ opacity: 1, x: 0, scale: 1 }}
 				transition={{ duration: 1.2, delay: 0.2 }}
 			>
