@@ -5,11 +5,13 @@ import { ContainerSpacing } from "../../components/containerSpacing/containerSpa
 import { FlipWords } from "./components/flipWord";
 import ContentVantagens from "./utils/ContentVantagens";
 import { Button } from "@/components/ui/button";
-import { SquareArrowOutUpRight } from "lucide-react";
+import { ArrowRight, SquareArrowOutUpRight } from "lucide-react";
 import CardsAnimate from "@/components/CardsAnimate/cardsAnimate";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense} from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Apresentacao } from "./components/apresentacao";
+import CarroselProducts from "./components/carrosel/carrosel";
+import { nossosProducts } from "@/db/nossosProducts";
 
 const GridBackgroundDemo = lazy(() =>
 	import("@/components/GridBackground/GridBackground").then((module) => ({
@@ -73,6 +75,13 @@ qualidade"
 				</div>
 			</ContainerSpacing>
 
+			<div className="flex flex-col items-center mb-11 justify-center">
+				<CarroselProducts setter={nossosProducts} />
+				<p className="text-muted-foreground text-center flex items-center justify-center mt-4 md:hidden">
+					Puxe ao lado para mais produtos <ArrowRight size={18} />
+				</p>
+			</div>
+			
 			<CardsAnimate />
 
 			{/* Vantagens chamativa */}
