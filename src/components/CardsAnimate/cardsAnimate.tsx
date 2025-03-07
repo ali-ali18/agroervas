@@ -104,7 +104,7 @@ const ReviewCard = ({
 
 export default function CardsAnimate() {
 	return (
-		<div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+		<div className="relative flex w-full flex-col items-center justify-center overflow-hidden max-w-7xl mx-auto">
 			<Marquee pauseOnHover className="[--duration:25s]">
 				{firstRow.map((review) => (
 					<ReviewCard key={review.cargo} {...review} />
