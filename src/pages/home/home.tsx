@@ -7,7 +7,7 @@ import ContentVantagens from "./utils/ContentVantagens";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, SquareArrowOutUpRight } from "lucide-react";
 import CardsAnimate from "@/components/CardsAnimate/cardsAnimate";
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense} from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Apresentacao } from "./components/apresentacao";
 import CarroselProducts from "./components/carrosel/carrosel";
